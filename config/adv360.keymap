@@ -70,7 +70,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "FILL_RETURN_TO_PREV_SIZE";
             #binding-cells = <0>;
-            bindings = <&fill>, <&return_to_prev_size>;
+            bindings = <&fill>, <&return_to_previous_size>;
         };
     };
 
@@ -105,71 +105,121 @@
         tile_left: tile_left {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp F16 &kp LEFT_CONTROL &kp LEFT_ARROW>;
-            label = "TILE_LEFT";
-        };
+            bindings =
+                <&macro_press>,
+                <&kp F16 &kp LEFT_CONTROL &kp LEFT_ARROW>,
+                <&macro_release>,
+                <&kp F16 &kp LEFT_CONTROL &kp LEFT_ARROW>;
 
-        tile_right: tile_right {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp F16 &kp LEFT_CONTROL &kp RIGHT>;
-            label = "TILE_RIGHT";
+            label = "TILE_LEFT";
         };
 
         tile_top: tile_top {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp F16 &kp LEFT_CONTROL &kp UP_ARROW>;
+            bindings =
+                <&macro_press>,
+                <&kp F16 &kp LEFT_CONTROL &kp UP_ARROW>,
+                <&macro_release>,
+                <&kp F16 &kp LEFT_CONTROL &kp UP_ARROW>;
+
             label = "TILE_TOP";
         };
 
         tile_bottom: tile_bottom {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp F16 &kp LEFT_CONTROL &kp DOWN>;
+            bindings =
+                <&macro_press>,
+                <&kp F16 &kp LEFT_CONTROL &kp DOWN_ARROW>,
+                <&macro_release>,
+                <&kp F16 &kp LEFT_CONTROL &kp DOWN_ARROW>;
+
             label = "TILE_BOTTOM";
+        };
+
+        tile_right: tile_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp F16 &kp LEFT_CONTROL &kp RIGHT_ARROW>,
+                <&macro_release>,
+                <&kp F16 &kp LEFT_CONTROL &kp RIGHT_ARROW>;
+
+            label = "TILE_RIGHT";
         };
 
         arrange_left: arrange_left {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp F16 &kp LEFT_CONTROL &kp LEFT_ARROW &kp LEFT_SHIFT>;
+            bindings =
+                <&macro_press>,
+                <&kp F16 &kp LEFT_CONTROL &kp LEFT_ARROW &kp LEFT_SHIFT>,
+                <&macro_release>,
+                <&kp F16 &kp LEFT_CONTROL &kp LEFT_ARROW &kp LEFT_SHIFT>;
+
             label = "ARRANGE_LEFT";
         };
 
         arrange_right: arrange_right {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp F16 &kp LEFT_CONTROL &kp RIGHT &kp LEFT_SHIFT>;
+            bindings =
+                <&macro_press>,
+                <&kp F16 &kp LEFT_CONTROL &kp RIGHT_ARROW &kp LEFT_SHIFT>,
+                <&macro_release>,
+                <&kp F16 &kp LEFT_CONTROL &kp RIGHT_ARROW &kp LEFT_SHIFT>;
+
             label = "ARRANGE_RIGHT";
         };
 
         arrange_top: arrange_top {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp F16 &kp LEFT_CONTROL &kp UP_ARROW &kp LEFT_SHIFT>;
+            bindings =
+                <&macro_press>,
+                <&kp F16 &kp LEFT_CONTROL &kp UP_ARROW &kp LEFT_SHIFT>,
+                <&macro_release>,
+                <&kp F16 &kp LEFT_CONTROL &kp UP_ARROW &kp LEFT_SHIFT>;
+
             label = "ARRANGE_TOP";
         };
 
-        arrange_bottom: arrange_buttom {
+        arrange_bottom: arrange_bottom {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp F16 &kp LEFT_CONTROL &kp DOWN &kp LEFT_SHIFT>;
-            label = "ARRANGE_BUTTOM";
+            bindings =
+                <&macro_press>,
+                <&kp F16 &kp LEFT_CONTROL &kp DOWN_ARROW &kp LEFT_SHIFT>,
+                <&macro_release>,
+                <&kp F16 &kp LEFT_CONTROL &kp DOWN_ARROW &kp LEFT_SHIFT>;
+
+            label = "ARRANGE_BOTTOM";
         };
 
-        fill: center {
+        fill: fill {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp F16 &kp LEFT_CONTROL &kp F>;
-            label = "CENTER";
+            bindings =
+                <&macro_press>,
+                <&kp F16 &kp LEFT_CONTROL &kp F>,
+                <&macro_release>,
+                <&kp F16 &kp LEFT_CONTROL &kp F>;
+
+            label = "FILL";
         };
 
-        return_to_prev_size: return_to_prev_size {
+        return_to_previous_size: return_to_previous_size {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp F16 &kp LEFT_CONTROL &kp R>;
-            label = "RETURN_TO_PREV_SIZE";
+            bindings =
+                <&macro_press>,
+                <&kp F16 &kp LEFT_CONTROL &kp R>,
+                <&macro_release>,
+                <&kp F16 &kp LEFT_CONTROL &kp R>;
+
+            label = "RETURN_TO_PREVIOUS_SIZE";
         };
     };
 
