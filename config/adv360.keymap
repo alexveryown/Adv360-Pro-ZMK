@@ -18,7 +18,7 @@
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
 
-            hold-trigger-key-positions = <0 1 2 3 4 5 6 14 15 16 17 18 19 20 28 29 30 31 32 33 34 35 36 46 47 48 49 50 51 52 60 61 62 63 64 65 66 67>;
+            hold-trigger-key-positions = <0 1 2 3 4 5 6 14 15 16 17 18 19 20 28 29 30 31 32 33 34 35 36 46 47 48 49 50 51 52 61 62 63 64 65 66 67>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
             hold-trigger-on-release;
@@ -32,10 +32,45 @@
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
 
-            hold-trigger-key-positions = <7 8 9 10 11 12 13 26 27 44 45 58 59 74 75 7 8 9 10 11 12 13 21 22 23 24 25 26 27 37 38 39 40 41 42 43 44 45 53 54 55 56 57 58 59 68 69 70 71 72 73 74 75>;
+            hold-trigger-key-positions = <7 8 9 10 11 12 13 26 27 44 45 58 59 74 7 8 9 10 11 12 13 21 22 23 24 25 26 27 37 38 39 40 41 42 43 44 45 53 54 55 56 57 58 59 68 69 70 71 72 73 74>;
             require-prior-idle-ms = <150>;
             quick-tap-ms = <175>;
             hold-trigger-on-release;
+        };
+
+        move_top: move_top {
+            compatible = "zmk,behavior-tap-dance";
+            label = "MOVE_TOP";
+            #binding-cells = <0>;
+            bindings = <&tile_top>, <&arrange_top>;
+        };
+
+        move_bottom: move_bottom {
+            compatible = "zmk,behavior-tap-dance";
+            label = "MOVE_BOTTOM";
+            #binding-cells = <0>;
+            bindings = <&tile_bottom>, <&arrange_bottom>;
+        };
+
+        move_left: move_left {
+            compatible = "zmk,behavior-tap-dance";
+            label = "MOVE_LEFT";
+            #binding-cells = <0>;
+            bindings = <&tile_left>, <&arrange_left>;
+        };
+
+        move_right: move_right {
+            compatible = "zmk,behavior-tap-dance";
+            label = "MOVE_RIGHT";
+            #binding-cells = <0>;
+            bindings = <&tile_right>, <&arrange_right>;
+        };
+
+        fill_return_to_prev_size: fill_return_to_prev_size {
+            compatible = "zmk,behavior-tap-dance";
+            label = "FILL_RETURN_TO_PREV_SIZE";
+            #binding-cells = <0>;
+            bindings = <&fill>, <&return_to_prev_size>;
         };
     };
 
@@ -66,6 +101,76 @@
 
             label = "GLOBE_F";
         };
+
+        tile_left: tile_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F16 &kp LEFT_CONTROL &kp LEFT_ARROW>;
+            label = "TILE_LEFT";
+        };
+
+        tile_right: tile_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F16 &kp LEFT_CONTROL &kp RIGHT>;
+            label = "TILE_RIGHT";
+        };
+
+        tile_top: tile_top {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F16 &kp LEFT_CONTROL &kp UP_ARROW>;
+            label = "TILE_TOP";
+        };
+
+        tile_bottom: tile_bottom {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F16 &kp LEFT_CONTROL &kp DOWN>;
+            label = "TILE_BOTTOM";
+        };
+
+        arrange_left: arrange_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F16 &kp LEFT_CONTROL &kp LEFT_ARROW &kp LEFT_SHIFT>;
+            label = "ARRANGE_LEFT";
+        };
+
+        arrange_right: arrange_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F16 &kp LEFT_CONTROL &kp RIGHT &kp LEFT_SHIFT>;
+            label = "ARRANGE_RIGHT";
+        };
+
+        arrange_top: arrange_top {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F16 &kp LEFT_CONTROL &kp UP_ARROW &kp LEFT_SHIFT>;
+            label = "ARRANGE_TOP";
+        };
+
+        arrange_bottom: arrange_buttom {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F16 &kp LEFT_CONTROL &kp DOWN &kp LEFT_SHIFT>;
+            label = "ARRANGE_BUTTOM";
+        };
+
+        fill: center {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F16 &kp LEFT_CONTROL &kp F>;
+            label = "CENTER";
+        };
+
+        return_to_prev_size: return_to_prev_size {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp F16 &kp LEFT_CONTROL &kp R>;
+            label = "RETURN_TO_PREV_SIZE";
+        };
     };
 
     keymap {
@@ -85,11 +190,11 @@
         mac {
             display-name = "White";
             bindings = <
-&kp EQUAL      &kp N1             &kp N2               &kp N3           &kp N4               &kp N5  &mo 5                                                                               &mo 4      &kp N6  &kp N7                &kp N8            &kp N9                &kp N0                 &kp MINUS
-&kp TAB        &kp Q              &kp W                &kp E            &kp R                &kp T   &kp F21                                                                             &kp F23    &kp Y   &kp U                 &kp I             &kp O                 &kp P                  &kp BSLH
-&kp ESC        &hml LEFT_SHIFT A  &hml LEFT_CONTROL S  &hml LEFT_ALT D  &hml LEFT_COMMAND F  &kp G   &kp F22   &kp LEFT_COMMAND  &kp LEFT_ALT      &kp RIGHT_CONTROL  &kp RIGHT_COMMAND  &kp F24    &kp H   &hmr RIGHT_COMMAND J  &hmr RIGHT_ALT K  &hmr RIGHT_CONTROL L  &hmr RIGHT_SHIFT SEMI  &kp SQT
-&kp LSHFT      &kp Z              &kp X                &kp C            &kp V                &kp B                               &kp F17           &kp F19                                          &kp N   &kp M                 &kp COMMA         &kp DOT               &kp FSLH               &kp RSHFT
-&fn_layer_f16  &kp GRAVE          &kp CAPS             &kp LEFT         &kp RIGHT                    &kp BSPC  &kp DEL           &kp F18           &kp F20            &kp ENTER          &kp SPACE          &kp UP                &kp DOWN          &kp LBKT              &kp RBKT               &mo 3
+&kp EQUAL      &kp N1             &kp N2               &kp N3           &kp N4               &kp N5  &mo 5                                                                               &mo 4      &kp N6  &kp N7                &kp N8            &kp N9               &kp N0                 &kp MINUS
+&kp TAB        &kp Q              &kp W                &kp E            &kp R                &kp T   &kp F21                                                                             &kp F23    &kp Y   &kp U                 &kp I             &kp O                &kp P                  &kp BSLH
+&kp ESC        &hml LEFT_SHIFT A  &hml LEFT_CONTROL S  &hml LEFT_ALT D  &hml LEFT_COMMAND F  &kp G   &kp F22   &kp LEFT_COMMAND  &kp LEFT_ALT      &kp RIGHT_CONTROL  &kp RIGHT_COMMAND  &kp F24    &kp H   &hmr RIGHT_COMMAND J  &hmr RIGHT_ALT K  &hmr LEFT_CONTROL L  &hmr RIGHT_SHIFT SEMI  &kp SQT
+&kp LSHFT      &kp Z              &kp X                &kp C            &kp V                &kp B                               &kp F17           &kp F19                                          &kp N   &kp M                 &kp COMMA         &kp DOT              &kp FSLH               &kp RSHFT
+&fn_layer_f16  &kp GRAVE          &kp CAPS             &kp LEFT         &kp RIGHT                    &kp BSPC  &kp DEL           &kp F18           &kp F20            &kp ENTER          &kp SPACE          &kp UP                &kp DOWN          &kp LBKT             &kp RBKT               &mo 3
             >;
         };
 
@@ -107,11 +212,11 @@
         fn {
             display-name = "Fn";
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &trans                                      &trans  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans   &trans   &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans   &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans   &trans   &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans   &trans   &trans
+&kp F1  &kp F2  &kp F3      &kp F4                     &kp F5       &kp F6  &trans                                      &trans  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
+&trans  &trans  &kp F17     &move_top                  &kp F19      &trans  &trans                                      &trans  &trans  &trans  &trans  &trans   &trans   &trans
+&trans  &trans  &move_left  &fill_return_to_prev_size  &move_right  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans   &trans
+&trans  &trans  &kp F18     &move_bottom               &kp F13      &trans                  &trans      &trans                  &trans  &trans  &trans  &trans   &trans   &trans
+&trans  &trans  &trans      &trans                     &trans               &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans   &trans   &trans
             >;
         };
 
@@ -134,6 +239,16 @@
 &trans  &trans   &trans   &trans  &trans  &trans  &none   &trans  &trans      &trans  &trans  &none   &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans   &trans   &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans   &trans   &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        layer_6 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
