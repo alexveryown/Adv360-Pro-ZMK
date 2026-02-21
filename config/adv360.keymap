@@ -14,26 +14,28 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_RIGHT";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
+            tapping-term-ms = <280>;
+            flavor = "balanced";
             bindings = <&kp>, <&kp>;
 
-            hold-trigger-key-positions = <41 43 42 44 0 1 2 3 4 5 6 14 15 16 17 18 19 20 28 29 30 31 32 33 34 35 36 46 47 48 49 50 51 52 60 61 62 63 64 65 66 67>;
+            hold-trigger-key-positions = <0 1 2 3 4 5 6 14 15 16 17 18 19 20 28 29 30 31 32 33 34 35 36 46 47 48 49 50 51 52 60 61 62 63 64 65 66 67>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
+            hold-trigger-on-release;
         };
 
         hml: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS_LEFT";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
+            tapping-term-ms = <280>;
+            flavor = "balanced";
             bindings = <&kp>, <&kp>;
 
-            hold-trigger-key-positions = <7 8 9 10 11 12 13 26 27 44 45 58 59 74 75 7 8 9 10 11 12 13 21 22 23 24 25 26 27 37 38 39 40 41 42 43 44 45 53 54 55 56 57 58 59 68 69 70 71 72 73 74 75 29 30 31 32>;
+            hold-trigger-key-positions = <7 8 9 10 11 12 13 26 27 44 45 58 59 74 75 7 8 9 10 11 12 13 21 22 23 24 25 26 27 37 38 39 40 41 42 43 44 45 53 54 55 56 57 58 59 68 69 70 71 72 73 74 75>;
             require-prior-idle-ms = <150>;
             quick-tap-ms = <175>;
+            hold-trigger-on-release;
         };
     };
 
@@ -50,6 +52,19 @@
             #binding-cells = <0>;
             bindings = <&bt BT_SEL 1 &to 2>;
             label = "BT_WIN";
+        };
+
+        fn_layer_f16: globe_f {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&mo 3 &kp F16>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&mo 3 &kp F16>;
+
+            label = "GLOBE_F";
         };
     };
 
@@ -70,11 +85,11 @@
         mac {
             display-name = "White";
             bindings = <
-&kp EQUAL  &kp N1             &kp N2               &kp N3           &kp N4               &kp N5  &mo 5                                                                               &mo 4      &kp N6  &kp N7                &kp N8            &kp N9                &kp N0                 &kp MINUS
-&kp TAB    &kp Q              &kp W                &kp E            &kp R                &kp T   &kp F21                                                                             &kp F23    &kp Y   &kp U                 &kp I             &kp O                 &kp P                  &kp BSLH
-&kp ESC    &hml LEFT_SHIFT A  &hml LEFT_CONTROL S  &hml LEFT_ALT D  &hml LEFT_COMMAND F  &kp G   &kp F22   &kp LEFT_COMMAND  &kp LEFT_ALT      &kp RIGHT_CONTROL  &kp RIGHT_COMMAND  &kp F24    &kp H   &hmr RIGHT_COMMAND J  &hmr RIGHT_ALT K  &hmr RIGHT_CONTROL L  &hmr RIGHT_SHIFT SEMI  &kp SQT
-&kp LSHFT  &kp Z              &kp X                &kp C            &kp V                &kp B                               &kp F17           &kp F19                                          &kp N   &kp M                 &kp COMMA         &kp DOT               &kp FSLH               &kp RSHFT
-&kp F16    &kp GRAVE          &kp CAPS             &kp LEFT         &kp RIGHT                    &kp BSPC  &kp DEL           &kp F18           &kp F20            &kp ENTER          &kp SPACE          &kp UP                &kp DOWN          &kp LBKT              &kp RBKT               &mo 3
+&kp EQUAL      &kp N1             &kp N2               &kp N3           &kp N4               &kp N5  &mo 5                                                                               &mo 4      &kp N6  &kp N7                &kp N8            &kp N9                &kp N0                 &kp MINUS
+&kp TAB        &kp Q              &kp W                &kp E            &kp R                &kp T   &kp F21                                                                             &kp F23    &kp Y   &kp U                 &kp I             &kp O                 &kp P                  &kp BSLH
+&kp ESC        &hml LEFT_SHIFT A  &hml LEFT_CONTROL S  &hml LEFT_ALT D  &hml LEFT_COMMAND F  &kp G   &kp F22   &kp LEFT_COMMAND  &kp LEFT_ALT      &kp RIGHT_CONTROL  &kp RIGHT_COMMAND  &kp F24    &kp H   &hmr RIGHT_COMMAND J  &hmr RIGHT_ALT K  &hmr RIGHT_CONTROL L  &hmr RIGHT_SHIFT SEMI  &kp SQT
+&kp LSHFT      &kp Z              &kp X                &kp C            &kp V                &kp B                               &kp F17           &kp F19                                          &kp N   &kp M                 &kp COMMA         &kp DOT               &kp FSLH               &kp RSHFT
+&fn_layer_f16  &kp GRAVE          &kp CAPS             &kp LEFT         &kp RIGHT                    &kp BSPC  &kp DEL           &kp F18           &kp F20            &kp ENTER          &kp SPACE          &kp UP                &kp DOWN          &kp LBKT              &kp RBKT               &mo 3
             >;
         };
 
