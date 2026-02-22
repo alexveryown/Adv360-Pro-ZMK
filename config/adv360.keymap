@@ -28,7 +28,7 @@
             label = "HOMEROW_MODS_LEFT";
             #binding-cells = <2>;
             tapping-term-ms = <280>;
-            flavor = "hold-preferred";
+            flavor = "balanced";
             bindings = <&kp>, <&kp>;
 
             hold-trigger-key-positions = <7 8 9 10 11 12 13 26 27 44 45 58 59 74 7 8 9 10 11 12 13 21 22 23 24 25 26 27 37 38 39 40 41 42 43 44 45 53 54 55 56 57 58 59 68 69 70 71 72 73 74 75>;
