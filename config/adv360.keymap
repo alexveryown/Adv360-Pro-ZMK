@@ -92,10 +92,10 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&mo 3 &kp F16>,
+                <&mo 4 &kp F16>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
-                <&mo 3 &kp F16>;
+                <&mo 4 &kp F16>;
 
             label = "GLOBE_F";
         };
@@ -227,33 +227,44 @@
         Default {
             display-name = "Transparent";
             bindings = <
-&kp EQUAL   &kp N1     &kp N2    &kp N3    &kp N4     &kp N5  &mo 5                                                                   &mo 4          &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
+&kp EQUAL   &kp N1     &kp N2    &kp N3    &kp N4     &kp N5  &mo 6                                                                   &mo 5          &kp N6  &kp N7  &kp N8     &kp N9    &kp N0    &kp MINUS
 &kp TAB     &kp Q      &kp W     &kp E     &kp R      &kp T   &kp HOME                                                                &kp PAGE_UP    &kp Y   &kp U   &kp I      &kp O     &kp P     &kp BSLH
 &kp ESCAPE  &kp A      &kp S     &kp D     &kp F      &kp G   &kp END   &kp LEFT_CONTROL  &kp LEFT_ALT      &kp RIGHT_GUI  &kp RCTRL  &kp PAGE_DOWN  &kp H   &kp J   &kp K      &kp L     &kp SEMI  &kp SQT
 &kp LSHFT   &kp Z      &kp X     &kp C     &kp V      &kp B                               &kp HOME          &kp PG_UP                                &kp N   &kp M   &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-&mo 3       &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT          &kp BSPC  &kp DEL           &kp END           &kp PAGE_DOWN  &kp ENTER  &kp SPACE              &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &mo 3
+&mo 4       &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT          &kp BSPC  &kp DEL           &kp END           &kp PAGE_DOWN  &kp ENTER  &kp SPACE              &kp UP  &kp DOWN   &kp LBKT  &kp RBKT  &mo 4
             >;
         };
 
         mac {
             display-name = "White";
             bindings = <
-&kp EQUAL      &kp N1             &kp N2               &kp N3           &kp N4               &kp N5  &mo 5                                                                               &mo 4      &kp N6  &kp N7                &kp N8            &kp N9               &kp N0                 &kp MINUS
+&kp EQUAL      &kp N1             &kp N2               &kp N3           &kp N4               &kp N5  &mo 6                                                                               &mo 5      &kp N6  &kp N7                &kp N8            &kp N9               &kp N0                 &kp MINUS
 &kp TAB        &kp Q              &kp W                &kp E            &kp R                &kp T   &kp F21                                                                             &kp F23    &kp Y   &kp U                 &kp I             &kp O                &kp P                  &kp BSLH
 &kp ESC        &hml LEFT_SHIFT A  &hml LEFT_CONTROL S  &hml LEFT_ALT D  &hml LEFT_COMMAND F  &kp G   &kp F22   &kp LEFT_COMMAND  &kp LEFT_ALT      &kp RIGHT_CONTROL  &kp RIGHT_COMMAND  &kp F24    &kp H   &hmr RIGHT_COMMAND J  &hmr RIGHT_ALT K  &hmr LEFT_CONTROL L  &hmr RIGHT_SHIFT SEMI  &kp SQT
 &kp LSHFT      &kp Z              &kp X                &kp C            &kp V                &kp B                               &kp F17           &kp F19                                          &kp N   &kp M                 &kp COMMA         &kp DOT              &kp FSLH               &kp RSHFT
-&fn_layer_f16  &kp GRAVE          &kp CAPS             &kp LEFT         &kp RIGHT                    &kp BSPC  &kp DEL           &kp F18           &kp F20            &kp ENTER          &kp SPACE          &kp UP                &kp DOWN          &kp LBKT             &kp RBKT               &mo 3
+&fn_layer_f16  &kp GRAVE          &kp CAPS             &kp LEFT         &kp RIGHT                    &kp BSPC  &kp DEL           &kp F18           &kp F20            &kp ENTER          &kp SPACE          &kp UP                &kp DOWN          &kp LBKT             &kp RBKT               &mo 4
             >;
         };
 
         win {
             display-name = "Blue";
             bindings = <
-&kp EQUAL   &kp N1             &kp N2               &kp N3           &kp N4               &kp N5  &mo 5                                                                    &mo 4          &kp N6  &kp N7                &kp N8            &kp N9                &kp N0                 &kp MINUS
+&kp EQUAL   &kp N1             &kp N2               &kp N3           &kp N4               &kp N5  &mo 6                                                                    &mo 5          &kp N6  &kp N7                &kp N8            &kp N9                &kp N0                 &kp MINUS
 &kp TAB     &kp Q              &kp W                &kp E            &kp R                &kp T   &kp HOME                                                                 &kp PAGE_UP    &kp Y   &kp U                 &kp I             &kp O                 &kp P                  &kp BSLH
 &kp ESCAPE  &hml LEFT_SHIFT A  &hml LEFT_COMMAND S  &hml LEFT_ALT D  &hml LEFT_CONTROL F  &kp G   &kp END   &kp LEFT_CONTROL  &kp LEFT_ALT       &kp LEFT_ALT   &kp RCTRL  &kp PAGE_DOWN  &kp H   &hmr RIGHT_CONTROL J  &hmr RIGHT_ALT K  &hmr RIGHT_COMMAND L  &hmr RIGHT_SHIFT SEMI  &kp SQT
 &kp LSHFT   &kp Z              &kp X                &kp C            &kp V                &kp B                               &kp RIGHT_GUI      &kp RIGHT_GUI                            &kp N   &kp M                 &kp COMMA         &kp DOT               &kp FSLH               &kp RSHFT
-&mo 3       &kp GRAVE          &kp CAPS             &kp LEFT         &kp RIGHT                    &kp BSPC  &kp DEL           &mo 3              &mo 3          &kp ENTER  &kp SPACE              &kp UP                &kp DOWN          &kp LBKT              &kp RBKT               &mo 3
+&mo 4       &kp GRAVE          &kp CAPS             &kp LEFT         &kp RIGHT                    &kp BSPC  &kp DEL           &mo 4              &mo 4          &kp ENTER  &kp SPACE              &kp UP                &kp DOWN          &kp LBKT              &kp RBKT               &mo 4
+            >;
+        };
+
+        mac_learn {
+            display-name = "White";
+            bindings = <
+&kp EQUAL      &kp N1             &kp N2               &kp N3           &kp N4               &kp N5  &mo 6                                               &mo 5      &kp N6  &kp N7                &kp N8            &kp N9               &kp N0                 &kp MINUS
+&kp TAB        &kp Q              &kp W                &kp E            &kp R                &kp T   &kp F21                                             &kp F23    &kp Y   &kp U                 &kp I             &kp O                &kp P                  &kp BSLH
+&kp ESC        &hml LEFT_SHIFT A  &hml LEFT_CONTROL S  &hml LEFT_ALT D  &hml LEFT_COMMAND F  &kp G   &kp F22   &none    &none        &none    &none      &kp F24    &kp H   &hmr RIGHT_COMMAND J  &hmr RIGHT_ALT K  &hmr LEFT_CONTROL L  &hmr RIGHT_SHIFT SEMI  &kp SQT
+&none          &kp Z              &kp X                &kp C            &kp V                &kp B                      &kp F17      &kp F19                        &kp N   &kp M                 &kp COMMA         &kp DOT              &kp FSLH               &none
+&fn_layer_f16  &kp GRAVE          &kp CAPS             &kp LEFT         &kp RIGHT                    &kp BSPC  &kp DEL  &kp F18      &kp F20  &kp ENTER  &kp SPACE          &kp UP                &kp DOWN          &kp LBKT             &kp RBKT               &mo 4
             >;
         };
 
@@ -282,32 +293,11 @@
         kp {
             display-name = "Fn";
             bindings = <
-&to 7   &bt_mac  &bt_win  &to 2   &to 1   &to 0   &trans                                      &none   &none   &none   &none   &none   &none   &none
+&to 3   &bt_mac  &bt_win  &to 2   &to 1   &to 0   &trans                                      &none   &none   &none   &none   &none   &none   &none
 &trans  &trans   &trans   &trans  &trans  &trans  &none                                       &none   &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans   &trans   &trans  &trans  &trans  &none   &trans  &trans      &trans  &trans  &none   &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans   &trans   &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans   &trans   &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        layer_6 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
-        mac_learn {
-            display-name = "White";
-            bindings = <
-&kp EQUAL      &kp N1             &kp N2               &kp N3           &kp N4               &kp N5  &mo 5                                               &mo 4      &kp N6  &kp N7                &kp N8            &kp N9               &kp N0                 &kp MINUS
-&kp TAB        &kp Q              &kp W                &kp E            &kp R                &kp T   &kp F21                                             &kp F23    &kp Y   &kp U                 &kp I             &kp O                &kp P                  &kp BSLH
-&kp ESC        &hml LEFT_SHIFT A  &hml LEFT_CONTROL S  &hml LEFT_ALT D  &hml LEFT_COMMAND F  &kp G   &kp F22   &none    &none        &none    &none      &kp F24    &kp H   &hmr RIGHT_COMMAND J  &hmr RIGHT_ALT K  &hmr LEFT_CONTROL L  &hmr RIGHT_SHIFT SEMI  &kp SQT
-&none          &kp Z              &kp X                &kp C            &kp V                &kp B                      &kp F17      &kp F19                        &kp N   &kp M                 &kp COMMA         &kp DOT              &kp FSLH               &none
-&fn_layer_f16  &kp GRAVE          &kp CAPS             &kp LEFT         &kp RIGHT                    &kp BSPC  &kp DEL  &kp F18      &kp F20  &kp ENTER  &kp SPACE          &kp UP                &kp DOWN          &kp LBKT             &kp RBKT               &mo 3
             >;
         };
     };
