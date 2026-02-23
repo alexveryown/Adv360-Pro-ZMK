@@ -299,11 +299,11 @@
 
         disable_homerow {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans         &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans         &trans
-&trans  &kp A   &kp S   &kp D   &kp F   &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &kp J   &kp K   &kp L   &kp SEMICOLON  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans         &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans         &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                        &trans     &trans  &trans  &trans  &trans  &trans         &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                        &trans     &trans  &trans  &trans  &trans  &trans         &trans
+&trans  &kp A   &kp S   &kp D   &kp F   &trans  &trans    &trans  &trans      &trans  &trans  &trans     &trans  &kp J   &kp K   &kp L   &kp SEMICOLON  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans      &trans                     &trans  &trans  &trans  &trans  &trans         &trans
+&trans  &trans  &trans  &trans  &trans          &kp BSPC  &trans  &trans      &trans  &trans  &kp SPACE          &trans  &trans  &trans  &trans         &trans
             >;
         };
 
