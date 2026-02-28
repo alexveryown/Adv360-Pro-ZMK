@@ -36,30 +36,30 @@
             hold-trigger-on-release;
         };
 
-        move_top: move_top {
+        td_move_top: td_move_top {
             compatible = "zmk,behavior-tap-dance";
-            label = "MOVE_TOP";
+            label = "TD_MOVE_TOP";
             #binding-cells = <0>;
             bindings = <&tile_top>, <&arrange_top>;
         };
 
-        move_bottom: move_bottom {
+        td_move_bottom: td_move_bottom {
             compatible = "zmk,behavior-tap-dance";
-            label = "MOVE_BOTTOM";
+            label = "TD_MOVE_BOTTOM";
             #binding-cells = <0>;
             bindings = <&tile_bottom>, <&arrange_bottom>;
         };
 
-        move_left: move_left {
+        td_move_left: td_move_left {
             compatible = "zmk,behavior-tap-dance";
-            label = "MOVE_LEFT";
+            label = "TD_MOVE_LEFT";
             #binding-cells = <0>;
             bindings = <&tile_left>, <&arrange_left>;
         };
 
-        move_right: move_right {
+        td_move_right: td_move_right {
             compatible = "zmk,behavior-tap-dance";
-            label = "MOVE_RIGHT";
+            label = "TD_MOVE_RIGHT";
             #binding-cells = <0>;
             bindings = <&tile_right>, <&arrange_right>;
         };
@@ -76,11 +76,13 @@
             label = "TD_F16_LAYER";
             #binding-cells = <0>;
             bindings = <&fn_layer_f16>, <&mo 5>;
+
+            tapping-term-ms = <100>;
         };
 
-        tap_mo_layer: tap_mo_layer {
+        ht_mo_layer: ht_mo_layer {
             compatible = "zmk,behavior-hold-tap";
-            label = "TAP_MO_LAYER";
+            label = "HT_MO_LAYER";
             #binding-cells = <2>;
             tapping-term-ms = <280>;
             flavor = "balanced";
@@ -89,9 +91,9 @@
             require-prior-idle-ms = <150>;
         };
 
-        shift_tap: shift_tap {
+        ht_shift: ht_shift {
             compatible = "zmk,behavior-hold-tap";
-            label = "SHIFT_TAP";
+            label = "HT_SHIFT";
             #binding-cells = <2>;
             tapping-term-ms = <280>;
             flavor = "balanced";
@@ -100,9 +102,9 @@
             require-prior-idle-ms = <150>;
         };
 
-        holdtogglelayer: holdtogglelayer {
+        ht_mo_toggle: ht_mo_toggle {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOLDTOGGLELAYER";
+            label = "HT_MO_TOGGLE";
             bindings = <&mo>, <&tog>;
 
             #binding-cells = <2>;
@@ -129,6 +131,8 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
+                <&macro_tap_time 0>,
+                <&macro_wait_time 0>,
                 <&macro_press>,
                 <&mo 5 &kp F16>,
                 <&macro_pause_for_release>,
@@ -276,11 +280,11 @@
         mac {
             display-name = "White";
             bindings = <
-&kp EQUAL             &kp N1               &kp N2           &kp N3               &kp N4             &kp N5  &mo 7                                                                               &mo 6      &kp N6  &kp N7              &kp N8                &kp N9            &kp N0                   &kp MINUS
-&kp TAB               &kp Q                &kp W            &kp E                &kp R              &kp T   &bt_mac                                                                             &kp F23    &kp Y   &kp U               &kp I                 &kp O             &kp P                    &kp BSLH
-&kp ESC               &hml LEFT_CONTROL A  &hml LEFT_ALT S  &hml LEFT_COMMAND D  &hml LEFT_SHIFT F  &kp G   &bt_win   &kp LEFT_COMMAND  &kp LEFT_ALT      &kp RIGHT_CONTROL  &kp RIGHT_COMMAND  &kp F24    &kp H   &hmr RIGHT_SHIFT J  &hmr RIGHT_COMMAND K  &hmr RIGHT_ALT L  &hmr RIGHT_CONTROL SEMI  &kp SQT
-&holdtogglelayer 4 4  &kp Z                &kp X            &kp C                &kp V              &kp B                               &kp F17           &kp F19                                          &kp N   &kp M               &kp COMMA             &kp DOT           &kp FSLH                 &holdtogglelayer 4 4
-&td_f16_layer         &kp GRAVE            &kp CAPS         &kp LEFT             &kp RIGHT                  &kp BSPC  &kp DEL           &kp F18           &kp F20            &kp ENTER          &kp SPACE          &kp UP              &kp DOWN              &kp LBKT          &kp RBKT                 &td_f16_layer
+&kp EQUAL          &kp N1               &kp N2           &kp N3               &kp N4             &kp N5  &mo 7                                                                               &mo 6      &kp N6  &kp N7              &kp N8                &kp N9            &kp N0                   &kp MINUS
+&kp TAB            &kp Q                &kp W            &kp E                &kp R              &kp T   &bt_mac                                                                             &kp F23    &kp Y   &kp U               &kp I                 &kp O             &kp P                    &kp BSLH
+&kp ESC            &hml LEFT_CONTROL A  &hml LEFT_ALT S  &hml LEFT_COMMAND D  &hml LEFT_SHIFT F  &kp G   &bt_win   &kp LEFT_COMMAND  &kp LEFT_ALT      &kp RIGHT_CONTROL  &kp RIGHT_COMMAND  &kp F24    &kp H   &hmr RIGHT_SHIFT J  &hmr RIGHT_COMMAND K  &hmr RIGHT_ALT L  &hmr RIGHT_CONTROL SEMI  &kp SQT
+&ht_mo_toggle 4 4  &kp Z                &kp X            &kp C                &kp V              &kp B                               &kp F17           &kp F19                                          &kp N   &kp M               &kp COMMA             &kp DOT           &kp FSLH                 &ht_mo_toggle 4 4
+&td_f16_layer      &kp GRAVE            &kp CAPS         &kp LEFT             &kp RIGHT                  &kp BSPC  &kp DEL           &kp F18           &kp F20            &kp ENTER          &kp SPACE          &kp UP              &kp DOWN              &kp LBKT          &kp RBKT                 &td_f16_layer
             >;
         };
 
@@ -319,11 +323,11 @@
         fn {
             display-name = "Fn";
             bindings = <
-&kp F1  &kp F2  &kp F3      &kp F4                     &kp F5       &kp F6  &trans                                      &trans  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
-&trans  &trans  &kp F17     &move_top                  &kp F19      &trans  &trans                                      &trans  &trans  &trans  &trans  &trans   &trans   &trans
-&trans  &trans  &move_left  &fill_return_to_prev_size  &move_right  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans   &trans
-&trans  &trans  &kp F18     &move_bottom               &kp F13      &trans                  &trans      &trans                  &trans  &trans  &trans  &trans   &trans   &trans
-&trans  &trans  &trans      &trans                     &trans               &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans   &trans   &trans
+&kp F1  &kp F2  &kp F3         &kp F4                     &kp F5          &kp F6  &trans                                      &trans  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12
+&trans  &trans  &kp F17        &td_move_top               &kp F19         &trans  &trans                                      &trans  &trans  &trans  &trans  &trans   &trans   &trans
+&trans  &trans  &td_move_left  &fill_return_to_prev_size  &td_move_right  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans   &trans
+&trans  &trans  &kp F18        &td_move_bottom            &kp F13         &trans                  &trans      &trans                  &trans  &trans  &trans  &trans   &trans   &trans
+&trans  &trans  &trans         &trans                     &trans                  &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans   &trans   &trans
             >;
         };
 
