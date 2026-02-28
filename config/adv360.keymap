@@ -109,6 +109,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <150>;
+            hold-while-undecided;
         };
     };
 
